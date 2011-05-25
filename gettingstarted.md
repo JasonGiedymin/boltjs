@@ -73,7 +73,7 @@ layout: default
       "package_target": "pkg",
       "package_name": "myapp"
     }
-  }
+  ]
 }
 {% endhighlight %}
 
