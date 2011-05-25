@@ -50,7 +50,7 @@ layout: default
 <h2>Setting Up An Application</h2>
 
 <p>
-  To build a standalone HTML5 app, first create a folder, let's call it <b>MyApp</b>, and create a file called <b>bolt-build.json</b>.  This will be used to concatenate all of your source files into one JavaScript file and one CSS file.  It also provides the CommonJS wrappers necessary to allow just-in-time execution of your code, which speeds up app startup time.  
+  To build a standalone HTML5 app, first create a folder, let's call it <b>MyApp</b>, and create a file called <b>package.json</b>.  This file describes your application, as per the <a href="http://wiki.commonjs.org/wiki/Packages/1.0">CommonJS Spec</a>.   Bolt has added an extra parameter, <b>bolt_build_manifest</b> which is used to concatenate all of your source files into one JavaScript file and one CSS file.  It also provides the CommonJS wrappers necessary to allow just-in-time execution of your code, which speeds up app startup time.  
 </p>
 
 <p>
@@ -58,18 +58,32 @@ layout: default
 </p>
 
 <p>
-  Open bolt-build.json, and add the following:
+  Open package.json, and add the following:
 </p>
 
 {% highlight javascript %}
-  {
-    "sources": [
-      "src"
-    ],
-    "package_target": "pkg",
-    "package_name": "myapp"
+{
+  "name": "SlayerApps",
+  "version": "0.0.0",
+  "bolt_build_manifest" : [
+    {
+      "sources": [
+        "src"
+      ],
+      "package_target": "pkg",
+      "package_name": "myapp"
+    }
   }
+}
 {% endhighlight %}
+
+<p>
+  The first two lines, name and version, are the minimum parameters required by the CommonJS spec.  The <b>bolt_build_manifest</b> parameter specifies <b>sources</b>, which is a list of the folders and files that are required in your application.  Both JavaScript and CSS files are included in the build process.  The <b>package_target</b> parameter specifies the name of the folder into which the built files will be placed.  The <b>package_name</b> parameter specifies the name of the files to be created, e.g. <b>myapp.js</b> and <b>myapp.css</b>.
+</p>
+
+<p>
+  Note that double quotes must be used for each part of the package.json file, otherwise Node complains about it not being sytactically correct JSON.
+</p>
 
 <p>
   Go to where you have Bolt downloaded and type <b>npm link</b>.  This uses the Node NPM tool to set up the Bolt build script to be used from anywhere
