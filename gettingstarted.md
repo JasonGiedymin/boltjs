@@ -63,7 +63,7 @@ layout: default
 
 {% highlight javascript %}
 {
-  "name": "SlayerApps",
+  "name": "MyApp",
   "version": "0.0.0",
   "bolt_build_manifest" : [
     {
