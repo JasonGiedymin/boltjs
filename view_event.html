@@ -77,3 +77,68 @@ require('javelin/core').createClass({
 });
 
 {% endhighlight %}
+
+<h2>Defining Custom Events</h2>
+
+<p>
+  In order for a View to communicate with it's owner, it can define custom events, separate from DOM events.  To do this, declare the events that it will fire in an array, e.g.
+</p>
+
+{% highlight javascript %}
+
+var SubView = core.createClass({
+  name: 'SubView',
+
+  events: ['doSomething', 'doSomethingElse'],
+
+  members: {
+    render: function() {
+      this.setLayout({
+        ontouchstart: 'fireSmth',
+        ontouchend: 'fireSmthElse'
+      });
+    },
+
+    fireSmth: function() {
+      this.invoke('doSomething', {someData: 'is put here'});
+    },
+
+    fireSmthElse: function() {
+      this.invoke('doSomethingElse', {someOtherData: 'isPutHere'});
+    }
+  }
+});
+
+{% endhighlight %}
+
+<p>
+  Then a parent view can listen for these events by creating a parameter name <b>on</b> + <b>name of event</b>, e.g.
+</p>
+
+{% highlight javascript %}
+
+  var ParentView = core.createClass({
+    name: 'OwnerView',
+
+    members: {
+      render: function() {
+        this.setLayout({
+          view: 'SubView',
+          ondoSomething: 'handleSmth',
+          ondoSomethingElse: 'handleSmthElse'
+        });
+
+      },
+
+      handleSmth: function(event) {
+        console.log('Got the doSomething event', event);
+      },
+    
+      handleSmthElse: function(event) {
+        console.log('GOt the doSomethingElse event', event);
+      }
+    }
+  });
+
+{% endhighlight %}
+
