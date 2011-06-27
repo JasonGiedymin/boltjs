@@ -1,6 +1,7 @@
 ---
 title: Getting Started with BoltJS
 layout: default
+section: gettingstarted
 ---
 
 <h1>Getting Started</h1>
