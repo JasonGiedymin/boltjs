@@ -8,7 +8,6 @@ layout: default
   Here are a few frequently asked questions and answers. Please feel free to contribute!.
 </p>
 
-<p>
 <b>How do I add a question to Bolt FAQ? </b>
 <br>
 <ul>
@@ -17,8 +16,8 @@ layout: default
   {% highlight javascript %}
   <p>
   <b>QUESTION HERE</b>
-  <br>
-  ANSWER HERE
+  <br>ANSWER HERE</br>
   </p>
   {% endhighlight %}
 </ul>
+</p>
