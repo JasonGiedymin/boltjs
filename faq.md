@@ -14,7 +14,7 @@ layout: default
   <li>Ask a question and request for it to be added!</li>
   <li>Do it yourself. Copy the following template:</li>
 </ul>
-  {% highlight javascript %}
+  {% highlight html %}
   <p>
   <b>QUESTION HERE</b>
   <br>ANSWER HERE</br>
