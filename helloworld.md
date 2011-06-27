@@ -35,7 +35,6 @@ section: gettingstarted
   <li>*package_target*: tells bolt where to put all the compiled files. In this case, bolt will compile a js file and a css file and dump the results into the *pkg* folder inside the root directory.</li>
 </ul>
 <br>Next we have the *package_target* which tells bolt where to put the compiled files
-</p>
 
 <h2>index.html</h2>
 <p>Next, we have the default html page. This is the page where the application will be embedded in. Here is a sample *index.html* file:</p>
