@@ -4,7 +4,7 @@ layout: default
 section: view
 ---
 
-<h1>Table View</h1>
+<h2>Table View</h2>
 
 The Table view is possibly the most complex view in Bolt.  It is a highly performant infinite scrolling widget which utilises progressive rendering and CSS transforms to scroll quickly through any amount of data.
 To create a table view, create a js file with these contents:
@@ -74,11 +74,13 @@ var AnotherView = require('javelin/core').createClass({
 });
 {% endhighlight %}
 
-Optimizations
+<h1>Optimizations</h1>
 If your TableView is not performing well, there are a few thing that you can do optimize / enhance the performance:
-1. Disable refreshing while scrolling. To do this, you can include two more methods *didScrollStart* and *didScrollEnd* after all the other required functions. For example, you can have a *ready* boolean that gets toggled on and off. Before refreshing, always perform a check to make sure it is *ready*.
-2. If the TableView is constantly refreshing, try putting a timer on it such that it only refreshes (in batches) once every second or so.
-3. If all of your cells are the same height, pass in a *fixedRowHeight* and leave out the heightForRowInSection method:
+<ul>
+  <li>Disable refreshing while scrolling. To do this, you can include two more methods *didScrollStart* and *didScrollEnd* after all the other required functions. For example, you can have a *ready* boolean that gets toggled on and off. Before refreshing, always perform a check to make sure it is *ready*.</li>
+  <li>If the TableView is constantly refreshing, try putting a timer on it such that it only refreshes (in batches) once every second or so.</li>
+  <li>If all of your cells are the same height, pass in a *fixedRowHeight* and leave out the heightForRowInSection method:</li>
+</ul>
 
 {% highlight javascript %}
   declare: function(options) {
