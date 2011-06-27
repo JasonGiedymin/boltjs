@@ -12,12 +12,11 @@ layout: default
 <br>
 <ul>
   <li>Ask a question and request for it to be added!</li>
-  <li>Do it yourself. Copy the following template:
+  <li>Do it yourself. Copy the following template:</li>
+</ul>
   {% highlight javascript %}
   <p>
   <b>QUESTION HERE</b>
   <br>ANSWER HERE</br>
   </p>
   {% endhighlight %}
-</ul>
-</p>
