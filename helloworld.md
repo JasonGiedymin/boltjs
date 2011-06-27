@@ -29,10 +29,10 @@ section: gettingstarted
   ]
   }
 {% endhighlight %}
-<p> Breakdown of this file:</p>, 
+<p> Breakdown of this file:</p>
 <ul>
   <li>*bolt_build_manifest*: tells bolt where all the source files are. In this case, it is telling bolt that one group of files will come from the root directory and the js folder, and another group of files will come from the css directory</li>
-  <li>*package_target*: tells bolt where to put all the compiled files. In this case, bolt will compile a js file and a css file and dump the results into the *pkg* folder inside the root directory.<li>
+  <li>*package_target*: tells bolt where to put all the compiled files. In this case, bolt will compile a js file and a css file and dump the results into the *pkg* folder inside the root directory.</li>
 </ul
 <br>Next we have the *package_target* which tells bolt where to put the compiled files
 </p>
@@ -69,16 +69,16 @@ html>
 </body>
 </html>
 {% endhighlight %}
-<p>Here, weve linked together all the resources we will need in our hello world application:
+<p>Here, weve linked together all the resources we will need in our hello world application:</p>
 <ul>
-  <li>*css*: Weve linked the default bolt.css as well as a custom css. Any of your own css can be put in here.</li
+  <li>*css*: Weve linked the default bolt.css as well as a custom css. Any of your own css can be put in here.</li>
   <li>*bolt*: Compiled version of bolt.js</li>
   <li>*helloworld js*: Point this to the compiled version of helloworld located in pkg/</li>
   <li>*init*: We created an init function that gets called inside body *onload*. This function will initialize everything and place it in the dom</li>
 </ul>
 
 <b>helloworld.js</b>
-<p>This is the exciting part. Inside *js/helloworld.js* is where we will write our bolt code. Here is the starter code we will use for our HelloWorld application:
+<p>This is the exciting part. Inside *js/helloworld.js* is where we will write our bolt code. Here is the starter code we will use for our HelloWorld application:</p>
 {% highlight javascript %}
 var core  = require('javelin/core');
 var View  = require('view').View;
