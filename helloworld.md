@@ -47,9 +47,7 @@ section: gettingstarted
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name = "viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width,target-densityDpi=device-dpi" />  
-
-  <!-- CSS -->  
-  <link rel="stylesheet" href="lib/bolt.css" type="text/css" media="screen" charset="utf-8">
+  <!-- CSS -->  <link rel="stylesheet" href="lib/bolt.css" type="text/css" media="screen" charset="utf-8">
   <link rel="stylesheet" href="pkg/helloworld.css" type="text/css" media="screen" charset="utf-8">
 
   <!-- BOLT -->
@@ -57,14 +55,12 @@ section: gettingstarted
 
   <!-- HelloWorld JS -->
   <script type="text/javascript" charset="utf-8" src="pkg/helloworld.js"></script>
-  <script type="text/javascript" charset="utf-8">
-    function init() {
-      window.helloworld = require('helloworld');
-      helloworld.init();
-    }
-  </script>
 </head>
-<body onload="init()">
+<body>
+  <script type="text/javascript" charset="utf-8">
+    var helloworld = require('helloworld');
+     helloworld.init();
+  </script>
 </body>
 </html>
 {% endhighlight %}
@@ -73,7 +69,7 @@ section: gettingstarted
   <li>*css*: Weve linked the default bolt.css as well as a custom css. Any of your own css can be put in here.</li>
   <li>*bolt*: Compiled version of bolt.js</li>
   <li>*helloworld js*: Point this to the compiled version of helloworld located in pkg/</li>
-  <li>*init*: We created an init function that gets called inside body <b>onload</b>. This function will initialize everything and place it in the dom</li>
+  <li>*init*: We created an init function that gets called inside. This function will initialize everything and place it in the dom</li>
 </ul>
 
 <h2>helloworld.js</h2>
@@ -93,11 +89,10 @@ var HelloView = core.createClass({
 })
 
 exports.init = function() {
-  var helloView;
-  helloView = new HelloView();
-  helloView.placeIn(document.body);
+  require('builder').build({
+    view: HelloView
+  }).placeIn(document.body);
 }
-
 {% endhighlight %}
 <p> Okay, this seems like a lot at first. The <b>require</b> statements at top are like include statements. <b>core</b> is used everywhere in the bolt framework to create models, views, and controllers. <b>View</b> is the base class that you can extend to create your own custom views. This is what we have done here. We have created the <b>HelloView</b> view which extends View, and set its content to "Hello World!" </p>
 <p>
