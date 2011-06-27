@@ -10,6 +10,8 @@ The Table view is possibly the most complex view in Bolt.  It is a highly perfor
 To create a table view, create a js file with these contents:
 
 {% highlight javascript %}
+var TableView = require('views/table_view').TableView;
+
 var ExampleTable = require('javelin/core').createClass({
   extend: View,
   declare: function(options) {
