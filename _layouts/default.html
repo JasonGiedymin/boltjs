@@ -14,8 +14,14 @@
       <ul id="pagenav">
         <li><a href="intro.html">Introduction</a></li>
         <li><a href="gettingstarted.html">Getting Started</a></li>
+        {% if page.section == 'gettingstarted' %}
+        <li>
+          <ul>
+            <li><a href="helloworld.html">Hello World Tutorial</a></li>
+          </ul>
+        </li>
+        {% endif %}
         <li><a href="view.html">Views</a></li>
-
         {% if page.section == 'view' %}
         <li>
           <ul>
