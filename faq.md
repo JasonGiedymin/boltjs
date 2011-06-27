@@ -17,6 +17,6 @@ layout: default
   {% highlight html %}
   <p>
   <b>QUESTION HERE</b>
-  <br>ANSWER HERE</br>
+  <br>ANSWER HERE
   </p>
   {% endhighlight %}
