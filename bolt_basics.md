@@ -110,7 +110,7 @@ In this method, we are caching some of the references to children views for late
 
 <p>These functions are fairly self explanatory. Notice that I'm using the auto-generated getSecondButtonValue method from the properties.</p>
 
-<p>Now, to put it all together: (Remember you can download this. Link is above) <p>
+<p>Now, to put it all together: (Remember you can download this. Link is above) </p>
 {% highlight javascript %}
 var core  = require('javelin/core');
 var View  = require('view').View;
