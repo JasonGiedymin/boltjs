@@ -84,7 +84,7 @@ Bolt provides some convenience for standard properties that need getters and set
   this.setSecondButtonValue("Second Button");
 {% endhighlight %}
 <p> 
-Those of you who have written javascript may know that a common beginner's foul is to run Javascript on a DOM element that has not yet been loaded yet. The way to get around this is to run the script only after the DOM has loaded. Bolt also has a similar problem and resolution. If you try to find any of the child views by reference in the constructor, it will be undefined. So, if you have some things you want to run while initializing a bolt object, define the ready property, which will automatically be called one the objected has completed loading.
+Those of you who have written javascript may know that a common beginner's foul is to run Javascript on a DOM element that has not yet been loaded yet. The way to get around this is to run the script only after the DOM has loaded. Bolt also has a similar problem and resolution. If you try to find any of the child views by reference in the constructor, it will be undefined. So, if you have some things you want to run while initializing a bolt object, define the ready property, which will automatically be called once the objecte has completed loading.
 </p>
 {% highlight javascript %}
   ready: function() {
@@ -94,7 +94,7 @@ Those of you who have written javascript may know that a common beginner's foul 
 {% endhighlight %}
 
 <p>
-In this method, we are caching some of the references to children views for later use. Remeber the ref property we talked about earlier? Here, we are finding each of the two buttons using this handle. Note that this.refs.xxxxx is functionally equivalent to this.findRef('xxxxx').
+In this method, we are caching some of the references to children views for later use. Remember the ref property we talked about earlier? Here, we are finding each of the two buttons using this handle. Note that this.refs.xxxxx is functionally equivalent to this.findRef('xxxxx').
 </p>
 
 <p> Finally, let's write the functions to be called when the buttons are clicked: </p>
@@ -168,3 +168,6 @@ exports.init = function() {
   }).placeIn(document.body);
 }
 {% endhighlight %}
+<p>
+Now try it out! You should get two buttons whose values change when you click on them.
+</p>
