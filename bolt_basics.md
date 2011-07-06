@@ -91,10 +91,80 @@ Those of you who have written javascript may know that a common beginner's foul 
     this.buttonone = this.refs.buttonone;
     this.buttontwo = this.findRef('buttontwo');
   },  
-{$ endhighlight %}
+{% endhighlight %}
 
 <p>
 In this method, we are caching some of the references to children views for later use. Remeber the ref property we talked about earlier? Here, we are finding each of the two buttons using this handle. Note that this.refs.xxxxx is functionally equivalent to this.findRef('xxxxx').
 </p>
 
 <p> Finally, let's write the functions to be called when the buttons are clicked: </p>
+{% highlight javascript %}
+  doActionOne: function() {
+    this.buttonone.setValue(this.firstButtonValue);
+  },  
+    
+  doActionTwo: function() {
+    this.buttontwo.setValue(this.getSecondButtonValue());
+  }
+{% endhighlight %}
+
+<p>These functions are fairly self explanatory. Notice that I'm using the auto-generated getSecondButtonValue method from the properties.</p>
+
+<p>Now, to put it all together: (Remember you can download this. Link is above) <p>
+{% highlight javascript %}
+var core  = require('javelin/core');
+var View  = require('view').View;
+var ButtonView  = require('views/button').Button;
+
+var ButtonExample = core.createClass({
+  extend: View,
+
+  properties: {
+    secondButtonValue: null
+  },  
+
+  construct: function(options) {
+    this.firstButtonValue = "First Button";
+    this.setSecondButtonValue("Second Button");
+    View.call(this, options);
+  },  
+
+  declare: function(options) {
+    return{
+      childViews: [
+        {   
+          view: ButtonView,
+          value: 'Example Button',
+          onclick: 'doActionOne',
+          ref: 'buttonone'
+        },  
+        {   
+          view: ButtonView,
+          value: 'Example Button',
+          onclick: 'doActionTwo',
+          ref: 'buttontwo'
+        },  
+      ]   
+    }   
+  },  
+  
+  ready: function() {
+    this.buttonone = this.refs.buttonone;
+    this.buttontwo = this.findRef('buttontwo');
+  },  
+
+  doActionOne: function() {
+    this.buttonone.setValue(this.firstButtonValue);
+  },  
+    
+  doActionTwo: function() {
+    this.buttontwo.setValue(this.getSecondButtonValue());
+  }
+})
+
+exports.init = function() {
+  require('builder').build({
+    view: ButtonExample
+  }).placeIn(document.body);
+}
+{% endhighlight %}
