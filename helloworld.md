@@ -99,7 +99,7 @@ exports.init = function() {
 <b>init</b> is the function we called in *index.html* above. <b>exports</b> tells bolt that this function will be called outside the scope of this file. In this <b>init</b> function, weve created an instance of HelloView and placed that instance inside the document body.
 </p>
 
-<h2>bolt-build</h2>
-<p>If you have followed this tutorial and created all the files as above, you should then compile your project using bolt-build. Simply type bolt-build in your root directory. Alternatively, if you want it to continuously build while your make changes, you can use *bolt-build -w* in a separate tab and leave it there.</p>
+<h2>bolt build</h2>
+<p>If you have followed this tutorial and created all the files as above, you should then compile your project using <b>bolt build</b>. Simply type <b>bolt build</b> in your root directory. Alternatively, if you want it to continuously build while your make changes, you can use <b>bolt build -w</b> in a separate tab and leave it there.</p>
 
 <p>and, voila! You should now be able to navigate to your index.html file and see Hello, World! on the screen.</p>
