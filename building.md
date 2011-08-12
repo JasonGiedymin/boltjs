@@ -13,7 +13,7 @@ Here is an example package.json file:
   "version": "1.0.0",
   "bolt_build_manifest":{
     "provide_common_js_require_function": true,
-    sources: [
+    "sources": [
       ["module_name", "path/to/module.js"],
       ["namespace", "../directory/outside/my/project"]
       "another_module.js"
