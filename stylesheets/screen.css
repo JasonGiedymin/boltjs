@@ -48,3 +48,7 @@
 .nobullet, .nobullet li {
   list-style-type: none;
 }
+
+.highlight {
+  background-color: whitesmoke;
+}
