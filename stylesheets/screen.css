@@ -1,3 +1,8 @@
+body {
+  width: 960px;
+  margin: 0 auto;
+}
+
 #main {
   padding-left: 180px;
 }
@@ -12,9 +17,8 @@
 }
 
 .headerlogo {
-  position: absolute;
-  top: -5px;
-  left: 10px;
+  float: left;
+  margin-top: -5px;
 }
 
 .headerlogo img {
@@ -25,7 +29,6 @@
 #pagenav {
   position: absolute;
   top: 100px;
-  left: 10px;
   font-size: large;
 }
 
@@ -41,7 +44,6 @@
 
 #main ul {
   padding-top: 10px;
-  padding-bottom: 10px;
   padding-left: 10px;
 }
 
@@ -51,4 +53,71 @@
 
 .highlight {
   background-color: whitesmoke;
+  padding: 3px 0 3px 12px;
+  border: 1px solid #D8D8D8;
+  -webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.23);
+  -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.23);
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.23);
+}
+
+// Common tab and pill styles
+.tabs,
+.pills {
+  margin: 0 0 20px;
+  padding: 0;
+  .clearfix();
+  li {
+    display: inline;
+    a {
+      float: left;
+      width: auto;
+    }
+  }
+}
+
+// Basic Tabs
+.tabs {
+  margin: 0 0 20px;
+  padding: 0;
+  zoom: 1;
+  margin-bottom: 18px;
+}
+.tabs:before,
+.tabs:after {
+  display: table;
+  content: "";
+}
+.tabs:after {
+  clear: both;
+}
+.tabs li {
+  display: inline;
+}
+.tabs li a {
+  float: left;
+  width: auto;
+  cursor: pointer;
+}
+.tabs {
+  width: 100%;
+}
+.tabs li a {
+  margin-bottom: -1px;
+  margin-right: 2px;
+  padding: 0 15px;
+  line-height: 35px;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+.tabs li a:hover {
+  background-color: #e6e6e6;
+  border-bottom: 1px solid #bfbfbf;
+}
+.tabs li.active a {
+  background-color: #fff;
+  padding: 0 14px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  color: #808080;
 }

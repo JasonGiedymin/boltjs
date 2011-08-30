@@ -19,7 +19,14 @@ The various parts of a view, in brief, are
   <li><b>statics</b>: A JSON object that should contain the static methods and properties for the class.</li>
 </ul>
 
+
 To create a new view class, use the createClass method, e.g.
+
+<ul class="tabs">
+  <li class="active"><a href="">Javascript</a></li>
+  <li><a>Coffee-Script</a></li>
+</ul>
+
 {% highlight javascript %}
 var Container = require('container').Container;
 
