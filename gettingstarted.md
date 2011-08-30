@@ -62,6 +62,10 @@ section: gettingstarted
   Open package.json, and add the following:
 </p>
 
+<ul class="tabs">
+  <li class="active"><a href="">Javascript</a></li>
+  <li><a>Coffee-Script</a></li>
+</ul>
 {% highlight javascript %}
 {
   "name": "MyApp",
